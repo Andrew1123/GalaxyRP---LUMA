@@ -1788,6 +1788,7 @@ static serverCommand_t	commands[] = {
 	{ "tinfo",				CG_ParseTeamInfo },
 	{ "zykchars",			CG_ZykChars },
 	{ "zykmod",				CG_ZykMod },
+	{ "fadeblack", 			CG_FadeBlack_f }, // For registering the fadeout command with the server
 };
 
 static const size_t numCommands = ARRAY_LEN( commands );
