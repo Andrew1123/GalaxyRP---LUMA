@@ -787,6 +787,11 @@ typedef struct cg_s {
 	int			timelimitWarnings;	// 5 min, 1 min, overtime
 	int			fraglimitWarnings;
 
+	int fadeStartTime; // for fadeout command
+	int fadeDuration; // for fadeout command
+	int fadeDirection; // for fadeout command
+	float fadeAlpha; // for fadeout command
+
 	qboolean	mapRestart;			// set on a map restart to set back the weapon
 
 	qboolean	renderingThirdPerson;		// during deaths, chasecams, etc
@@ -1063,6 +1068,7 @@ Ghoul2 Insert End
 	// 1 - Stealth Attacker Upgrade, which makes Radar not see this player
 	// 2 - Player ally
 	int zyk_rpg_stuff[MAX_CLIENTS];
+
 } cg_t;
 
 #define MAX_TICS	14
