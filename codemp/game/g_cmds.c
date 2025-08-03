@@ -12642,7 +12642,7 @@ void Cmd_ClientPrint_f( gentity_t *ent ) {
 
 	if ( trap->Argc() < 3)
 	{
-		trap->SendServerCommand( ent-g_entities, va("print \"Usage: /clientprint <player name or ID, or -1 to show to all players> <message>\n\"") );
+		trap->SendServerCommand( ent-g_entities, va("print \"Usage: /clitestentprint <player name or ID, or -1 to show to all players> <message>\n\"") );
 		return;
 	}
 
