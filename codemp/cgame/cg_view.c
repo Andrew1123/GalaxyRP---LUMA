@@ -2714,6 +2714,22 @@ void CG_DrawActiveFrame( int serverTime, stereoFrame_t stereoView, qboolean demo
 	// actually issue the rendering calls
 	CG_DrawActive( stereoView );
 
+	if ( cg.fadeDirection != 0 && cg.fadeDuration > 0 ) {
+    int elapsed = cg.time - cg.fadeStartTime;
+    float frac = (float)elapsed / (float)cg.fadeDuration;
+
+    if ( frac >= 1.0f ) {
+        frac = 1.0f;
+        cg.fadeDirection = 0; // stop fading
+    }
+
+    if ( cg.fadeDirection == 1 ) {
+        cg.fadeAlpha = frac;       // fade in: 0 → 1
+    } else if ( cg.fadeDirection == -1 ) {
+        cg.fadeAlpha = 1.0f - frac; // fade out: 1 → 0
+    }
+}
+
 	CG_DrawAutoMap();
 
 	if ( cg_stats.integer ) {
