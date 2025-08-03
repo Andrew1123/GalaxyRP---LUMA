@@ -340,6 +340,12 @@ void CG_MiscEnt( void ) {
 	}
 }
 
+void CG_StartFade( int direction, int duration ) {
+    cg.fadeDirection = direction; // 1 = fade in, -1 = fade out
+    cg.fadeDuration = duration;
+    cg.fadeStartTime = cg.time;   // set time in milliseconds 
+}
+
 /*
 Ghoul2 Insert Start
 */
