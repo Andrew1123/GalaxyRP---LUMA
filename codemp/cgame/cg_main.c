@@ -49,6 +49,11 @@ void CG_CleanJetpackGhoul2(void);
 void CG_Init( int serverMessageNum, int serverCommandSequence, int clientNum );
 void CG_Shutdown( void );
 
+cg.fadeStartTime = 0; // four lines for fadeout command initial state upon connect
+cg.fadeDuration = 0;
+cg.fadeDirection = 0;
+cg.fadeAlpha = 0.0f;
+
 void CG_CalcEntityLerpPositions( centity_t *cent );
 void CG_ROFF_NotetrackCallback( centity_t *cent, const char *notetrack);
 
